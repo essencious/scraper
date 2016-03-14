@@ -16,10 +16,16 @@ class Scraper {
     $this->helper = new Helper();
   }
 
+  /*
+   * Takes a parsered list and converts to pretty JSON
+   *
+   * @return <string> pretty json string of the product list
+   */
   public function scrapeToJson() {
     $items = $this->parserList();
     return json_encode($items, JSON_PRETTY_PRINT);
   }
+
   /*
    * Crawls a given URL
    *
